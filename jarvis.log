@@ -1,0 +1,44 @@
+2026-02-15 22:00:09,801 - INFO - Initializing Vosk model...
+2026-02-15 22:00:10,643 - INFO - System initialized successfully.
+2026-02-15 22:00:10,643 - INFO - Jarvis system started.
+2026-02-15 22:00:10,643 - INFO - Listening for wake word...
+2026-02-15 22:00:16,137 - INFO - Heard: jarvis classroom
+2026-02-15 22:00:16,140 - INFO - Wake word detected.
+2026-02-15 22:00:16,194 - INFO - Unknown command received.
+2026-02-15 22:00:16,196 - INFO - Listening for wake word...
+2026-02-15 22:00:20,999 - INFO - Heard: joggers open classroom
+2026-02-15 22:00:23,997 - INFO - Heard: hoping glasgow
+2026-02-15 22:00:27,255 - INFO - Heard: platinum open
+2026-02-15 22:00:30,255 - INFO - Heard: classroom
+2026-02-15 22:00:36,003 - INFO - Heard: help him
+2026-02-15 22:00:44,258 - INFO - Heard: hope and google
+2026-02-15 22:00:48,995 - INFO - Heard: jarvis brother
+2026-02-15 22:00:48,995 - INFO - Wake word detected.
+2026-02-15 22:00:49,058 - INFO - Unknown command received.
+2026-02-15 22:00:49,060 - INFO - Listening for wake word...
+2026-02-15 22:00:52,816 - INFO - Heard: jarvis browser
+2026-02-15 22:00:52,819 - INFO - Wake word detected.
+2026-02-15 22:00:52,878 - INFO - Command matched: browser
+2026-02-15 22:00:52,878 - INFO - Waiting for clap confirmation...
+2026-02-15 22:00:58,167 - INFO - Clap confirmation timeout.
+2026-02-15 22:00:58,226 - INFO - Command canceled due to missing clap confirmation.
+2026-02-15 22:00:58,228 - INFO - Listening for wake word...
+2026-02-15 22:01:03,523 - INFO - Heard: girlish browser
+2026-02-15 22:01:07,028 - INFO - Heard: garnish browser
+2026-02-15 22:01:10,275 - INFO - Heard: jarvis velvet
+2026-02-15 22:01:10,275 - INFO - Wake word detected.
+2026-02-15 22:01:10,343 - INFO - Unknown command received.
+2026-02-15 22:01:10,345 - INFO - Listening for wake word...
+2026-02-15 22:01:13,947 - INFO - Heard: jarvis rather
+2026-02-15 22:01:13,947 - INFO - Wake word detected.
+2026-02-15 22:01:14,008 - INFO - Unknown command received.
+2026-02-15 22:01:14,008 - INFO - Listening for wake word...
+2026-02-15 22:01:16,817 - INFO - Heard: that of his brother
+2026-02-15 22:01:19,549 - INFO - Heard: during his brother
+2026-02-15 22:01:22,819 - INFO - Heard: jarvis browser
+2026-02-15 22:01:22,819 - INFO - Wake word detected.
+2026-02-15 22:01:22,876 - INFO - Command matched: browser
+2026-02-15 22:01:22,876 - INFO - Waiting for clap confirmation...
+2026-02-15 22:01:28,149 - INFO - Clap confirmation timeout.
+2026-02-15 22:01:28,211 - INFO - Command canceled due to missing clap confirmation.
+2026-02-15 22:01:28,211 - INFO - Listening for wake word...

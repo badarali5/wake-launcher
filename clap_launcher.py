@@ -9,13 +9,6 @@ import webbrowser
 import logging
 import sys
 
-# ---------------- LOGGING SETUP ----------------
-
-logging.basicConfig(
-    filename="jarvis.log",
-    level=logging.INFO,
-    format="%(asctime)s - %(levelname)s - %(message)s"
-)
 
 
 class WakeClapLauncher:
@@ -31,7 +24,7 @@ class WakeClapLauncher:
             self.recognizer = KaldiRecognizer(self.model, self.sample_rate)
 
             # Clap detection tuning
-            self.clap_spike_threshold = 3000
+            self.clap_spike_threshold = 10
             self.clap_cooldown = 0.3
 
             # Load commands
@@ -141,6 +134,10 @@ class WakeClapLauncher:
     # ---------------- COMMAND HANDLER ----------------
 
     def handle_command(self, text):
+        text = text.replace("jarvis", "").strip()
+
+        logging.info(f"Processed command text: {text}")
+
         for keyword, config in self.commands.items():
             if keyword in text:
                 logging.info(f"Command matched: {keyword}")
@@ -157,6 +154,7 @@ class WakeClapLauncher:
         logging.info("Unknown command received.")
         print("Unknown command.")
 
+
     # ---------------- ACTION EXECUTION ----------------
 
     def execute_command(self, config):
@@ -169,8 +167,8 @@ class WakeClapLauncher:
             if cmd_type == "browser":
                 webbrowser.open(value)
 
-            elif cmd_type == "program":
-                subprocess.Popen([value])
+            elif cmd_type == "classroom":
+                webbrowser.open(value)
 
             elif cmd_type == "shutdown":
                 if self.os_type == "Windows":
