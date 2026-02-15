@@ -117,7 +117,7 @@ class WakeClapLauncher:
         print("Opening Google...")
         webbrowser.open("https://www.google.com")
 
-    def open_vscode(self):
+    def open_classroom(self):
         print("Opening Google Classroom...")
         webbrowser.open("https://classroom.google.com/u/1/?pli=1")
 

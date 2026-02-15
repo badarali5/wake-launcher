@@ -1,0 +1,14 @@
+{
+  "browser": {
+    "type": "browser",
+    "value": "https://www.google.com"
+  },
+  "code": {
+    "type": "classroom",
+    "value": "https://classroom.google.com/u/1/?pli=1"
+  },
+  "sleep": {
+    "type": "shutdown",
+    "value": 5
+  }
+}
