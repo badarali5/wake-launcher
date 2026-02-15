@@ -1,3 +1,4 @@
+from logging import config
 import platform
 import subprocess
 import time
@@ -6,6 +7,13 @@ import numpy as np
 import pyaudio
 from vosk import Model, KaldiRecognizer
 import webbrowser
+import logging
+logging.basicConfig(
+    filename="jarvis.log",
+    level=logging.INFO,
+    format="%(asctime)s - %(message)s"
+)
+
 
 
 class WakeClapLauncher:
@@ -20,11 +28,9 @@ class WakeClapLauncher:
 
         self.clap_threshold = 10
         self.clap_cooldown = 0.3
-        self.commands = {
-        "browser": self.open_browser,
-        "classroom": self.open_classroom,
-        "sleep": self.shutdown_system
-        }
+        with open("commands.json") as f:
+            self.commands = json.load(f)
+
 
 
     # ---------------- LISTEN FOR FULL COMMAND ----------------
@@ -102,28 +108,31 @@ class WakeClapLauncher:
     # ---------------- COMMAND HANDLER ----------------
 
     def handle_command(self, text):
-        for key, action in self.commands.items():
+        for key, config in self.commands.items():
             if key in text:
+                logging.info("Wake word detected")
                 if self.listen_for_claps():
-                    action()
+                    self.execute_command(config)
                 return
+
 
         print("Unknown command.")
 
 
     # ---------------- ACTIONS ----------------
 
-    def open_browser(self):
-        print("Opening Google...")
-        webbrowser.open("https://www.google.com")
+    def execute_command(self, config):
+        cmd_type = config["type"]
 
-    def open_classroom(self):
-        print("Opening Google Classroom...")
-        webbrowser.open("https://classroom.google.com/u/1/?pli=1")
+        if cmd_type == "browser":
+            webbrowser.open(config["value"])
 
-    def shutdown_system(self):
-        print("Shutting down in 5 seconds...")
-        subprocess.Popen(["shutdown", "/s", "/t", "5"])
+        elif cmd_type == "classroom":
+            subprocess.Popen([config["value"]])
+
+        elif cmd_type == "shutdown":
+            subprocess.Popen(["shutdown", "/s", "/t", str(config["value"])])
+    
 
     # ---------------- MAIN LOOP ----------------
 
